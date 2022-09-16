@@ -1,0 +1,24 @@
+{
+  "name": "notlega.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notlega/notlega.github.io.git"
+  },
+  "author": "onghinjourn@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notlega/notlega.github.io/issues"
+  },
+  "homepage": "https://github.com/notlega/notlega.github.io#readme",
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
