@@ -1,21 +1,21 @@
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, serif;
 }
 
 .navbar ul {
-	overflow: hidden;
-	background-color: #333;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar ul li {
-	float: left;
+  float: left;
 }
 
 .navbar ul li a {
-	display: block;
+  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
