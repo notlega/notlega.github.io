@@ -2,26 +2,74 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, serif;
 }
 
-.navbar ul {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .topnav-navitems a {
+    float: none;
+    width: -webkit-fill-available;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 786px) */
+@media only screen and (min-width: 600px) and (max-width: 786px) {
+  .topnav-navitems a {
+    float: none;
+    width: -webkit-fill-available;
+  }
+
+	.column-container {
+		width: 100%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.column-container {
+		width: 50%;
+	}
+
+	.topnav-button {
+		display: none;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.column-container {
+		width: 33.3%;
+	}
+
+	.topnav-button {
+		display: none;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.topnav-button {
+		display: none;
+	}
+}
+
+.topnav {
   overflow: hidden;
   background-color: #333;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
-.navbar ul li {
+.topnav-navitems a {
   float: left;
-}
-
-.navbar ul li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   text-decoration: none;
 }
 
-.navbar ul li a:hover {
+.topnav-navitems a:hover {
   background-color: #111;
+}
+
+.column-container {
+	float: left;
+	width: 25%;
 }
