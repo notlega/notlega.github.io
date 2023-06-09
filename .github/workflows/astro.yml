@@ -25,12 +25,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
         with:
-          node-version: "latest"
-          cache: "pnpm"
-          cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+          version: latest
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: pnpm
 
       - name: Setup Pages
         id: pages
