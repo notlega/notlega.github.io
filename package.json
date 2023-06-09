@@ -1,25 +1,39 @@
 {
   "name": "notlega.github.io",
+  "type": "module",
   "version": "1.0.0",
-  "description": "Personal Website",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "npx prettier "
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/notlega/notlega.github.io.git"
   },
-  "author": "onghinjourn@gmail.com",
-  "license": "ISC",
+  "author": "Ong Hin Journ <onghinjourn@gmail.com>",
   "bugs": {
     "url": "https://github.com/notlega/notlega.github.io/issues"
   },
   "homepage": "https://github.com/notlega/notlega.github.io#readme",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^0.3.2",
+    "@astrojs/prefetch": "^0.2.3",
+    "@astrojs/sitemap": "^1.3.3",
+    "@astrojs/tailwind": "^3.1.3",
+    "astro": "^2.6.2",
+    "tailwindcss": "^3.0.24"
+  },
   "devDependencies": {
-    "eslint": "^8.23.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "@typescript-eslint/parser": "^5.59.9",
+    "astro-eslint-parser": "^0.14.0",
+    "eslint": "^8.42.0",
+    "eslint-plugin-astro": "^0.27.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.10.0"
   }
 }
