@@ -1,7 +1,7 @@
 {
   "extends": [
-    "airbnb-base",
-    "airbnb-typescript/base",
+    "airbnb",
+    "airbnb-typescript",
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended"
   ],
@@ -9,6 +9,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "overrides": [
     {

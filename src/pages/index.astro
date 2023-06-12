@@ -1,10 +1,156 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
+
+const SKILLS = [
+  ['PostgreSQL/MySQL', 'NoSQL'],
+  ['AWS', 'Docker'],
+  ['Bash/PowerShell', 'Git'],
+  ['GitHub', 'HTML/CSS'],
+  ['React/NextJS', 'Astro'],
+  ['TypeScript/JavaScript', 'NodeJS'],
+  ['Java', 'Maven/Gradle'],
+];
+
+const EDUCATION = [
+  {
+    title: "Ang Mo Kio Secondary School - 'O' Levels",
+    date: 'January 2017 - December 2020',
+    description: [
+      'Member of the Symphonic Band and Section Leader of the Clarinet Section.',
+      'Participated in multiple programming events and competitions.',
+    ],
+    lists: ['Tank Tinkerer 2018', 'CodeFest 2019'],
+  },
+  {
+    title: 'Singapore Polytechnic - Diploma in Information Technology',
+    date: 'April 2021 - Present',
+    description: ['Currently in Project INC pathway.'],
+    lists: [],
+  },
+];
+
+const EXPERIENCE = [
+  {
+    title: 'Food Innovation and Resource Centre (FIRC) - Software Engineer',
+    date: 'April 2022 - August 2022',
+    description: [
+      'Used the MVC design pattern to design and code, which improves re-usability and maintainability.',
+      'Wrote logging for debugging and testing purposes for the entire project to improve productivity.',
+      'Wrote unit test cases to maintain the application and prevent bugs, reducing costs.',
+      'Used React, a popular Front-End framework, together with charting and styling libraries using best practices to improve reusability and maintainability.',
+      'Wrote end-to-end test cases to maintain application and eliminate bugs.',
+      'Participated in the setting up, maintaining and deployment of the PostgreSQL relational database for development and production.',
+    ],
+  },
+  {
+    title: 'Singapore Iron Works Merchant Association - DevOps Engineer',
+    date: 'September 2022 - Current',
+    description: [
+      'Used NextJS, a popular Front-End framework, together with popular styling libraries using best practices to improve responsiveness and maintainability.',
+      'Wrote end-to-end test cases to maintain the application and reduce bugs.',
+      'In V1 of the WebApp, I contributed to the design of the database.',
+      'In V2 of the WebApp, I participated in the migration and setup of the database from Supabase to CockroachDB and Prisma as our ORM.',
+      'Wrote testing and deployment pipelines using GitHub Actions.',
+      'This improved productivity by 100% as manual testing and deployment was not needed anymore.',
+      'Set-up AWS ECR, ECS, and S3 for preview, staging and production.',
+      'Wrote documentation for teams to help them set up a local testing environment using Docker and Bash/Powershell.',
+      "This reduced the team's time wasted searching for methods to set up their local testing environment.",
+    ],
+  },
+];
 ---
 
 <MainLayout
   title="Home"
   description="Welcome to Hin Journ's portfolio home page!"
 >
-  Hello World
+  <article class="prose max-w-none mt-8">
+    <h2>Profile</h2>
+    <p>
+      Hello, I'm Ong Hin Journ, an aspiring DevOps / Software Engineer based in
+      Singapore. I'm experienced in Frontend, Backend, and DevOps. I'm currently
+      studying under Singapore Polytechnic's Diploma in Information Technology
+      under the Project INC pathway.
+    </p>
+    <p>
+      Under the Project INC pathway, I've become a team-oriented person, able to
+      work with others to achieve a common goal. I've also become a more
+      responsible person, able to take ownership of my work and be accountable
+      for my actions.
+    </p>
+    <p>
+      I'm currently looking for a DevOps / Software Engineer internship to
+      further my skills and knowledge in the industry.
+    </p>
+    <h2>Skills</h2>
+    <p>I'm experienced in the following technologies:</p>
+    <table>
+      <tbody class="w-full min-w-max table-auto text-left">
+        {
+          SKILLS.map((skill) => (
+            <tr>
+              <td>{skill[0]}</td>
+              <td>{skill[1]}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <h2>Education</h2>
+    <ul>
+      {
+        EDUCATION.map((education) => (
+          <li>
+            <h4 class="mb-0">{education.title}</h4>
+            <p class="mt-0 text-gray-700">{education.date}</p>
+            {education.description.map((item) => {
+              return <p>{item}</p>;
+            })}
+            <ul>
+              {education.lists &&
+                education.lists.map((item) => {
+                  return (
+                    <li>
+                      <p>{item}</p>
+                    </li>
+                  );
+                })}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+    <h2>Experience</h2>
+    <ul>
+      {
+        EXPERIENCE.map((experience) => (
+          <li>
+            <h4 class="mb-0">{experience.title}</h4>
+            <p class="mt-0 text-gray-700">{experience.date}</p>
+            <ul>
+              {experience.description.map((item) => {
+                return <li>{item}</li>;
+              })}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+    <h2>Contact Me</h2>
+    <p class="mb-0">Phone Number: (+65) 9455 4371</p>
+    <p class="my-0">
+      Email:{' '}
+      <a href="mailto:onghinjourn@gmail.com">onghinjourn@gmail.com</a>
+    </p>
+    <p class="my-0">
+      GitHub:{' '}
+      <a href="https://github.com/notlega">https://github.com/notlega</a>
+    </p>
+    <p class="mt-0 mb-8">
+      LinkedIn:{' '}
+      <a href="https://www.linkedin.com/in/ong-hin-journ-281a80241/">
+        https://www.linkedin.com/in/ong-hin-journ-281a80241/
+      </a>
+    </p>
+  </article>
 </MainLayout>

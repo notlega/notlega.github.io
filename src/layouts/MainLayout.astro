@@ -1,13 +1,17 @@
 ---
+import ThemeProvider from '@/components/ThemeProvider';
+import NavBar from '@/components/header/NavBar';
+import Footer from '@/components/footer/Footer';
+
 interface Props {
   title: string;
   description: string;
   path?: string;
 }
 
-const { title, description, path = "" } = Astro.props;
+const { title, description, path = '' } = Astro.props;
 
-const WEBSITE_URL = "https://notlega.github.io";
+const WEBSITE_URL = 'https://notlega.github.io';
 ---
 
 <html lang="en">
@@ -42,7 +46,14 @@ const WEBSITE_URL = "https://notlega.github.io";
     <meta property="twitter:image" content="" />
   </head>
   <body>
-    <slot />
+    <ThemeProvider client:only="react">
+      <NavBar client:load />
+      <main class="max-w-4xl mx-auto px-6">
+        <slot />
+      </main>
+    </ThemeProvider>
   </body>
-  <footer></footer>
+  <footer>
+    <Footer client:load />
+  </footer>
 </html>

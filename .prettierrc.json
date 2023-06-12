@@ -8,5 +8,6 @@
       }
     }
   ],
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "all"
 }
