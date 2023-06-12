@@ -3,9 +3,10 @@ import { defineConfig } from 'astro/config';
 import markdoc from '@astrojs/markdoc';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://notlega.github.io',
-  integrations: [markdoc(), react(), tailwind()],
+  integrations: [markdoc(), react(), tailwind(), sitemap()],
 });
