@@ -1,30 +1,18 @@
 {
-  "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "plugin:astro/recommended",
-    "plugin:astro/jsx-a11y-recommended"
-  ],
+  "extends": ["plugin:astro/recommended"],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": "./tsconfig.json"
-  },
-  "rules": {
-    "implicit-arrow-linebreak": "off",
-    "import/extensions": "off",
-    "react/function-component-definition": "off",
-    "react/react-in-jsx-scope": "off"
+    "sourceType": "module"
   },
   "overrides": [
     {
       "files": ["*.astro"],
+      "processor": "astro/client-side-ts",
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
-      },
-      "rules": {}
+      }
     }
   ]
 }
