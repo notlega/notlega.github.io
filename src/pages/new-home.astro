@@ -8,7 +8,7 @@ import Hero from '@/components/Hero.astro';
   title={`Ong Hin Journ's Portfolio`}
   description="A portfolio showcasing the work and projects of Ong Hin Journ."
 >
-  <section class="container mx-auto">
+  <section class="max-w-4xl mx-auto">
     <div class="min-h-screen min-w-screen">
       <Hero>
         <img
@@ -66,9 +66,36 @@ import Hero from '@/components/Hero.astro';
       </Hero>
     </div>
   </section>
-  <!-- <section class=" bg-white py-8" id="about">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8">About Me</h2>
+  <section class="bg-white p-8" id="about">
+    <div class="max-w-4xl text-center mx-auto space-y-8">
+      <h2 class="text-primary-light text-4xl font-bold">About Me</h2>
+      <div
+        class="flex flex-col justify-center space-y-10 mx-auto lg:flex-row lg:space-x-16 lg:space-y-0 lg:items-center"
+      >
+        <picture class="flex-1">
+          <img
+            src="/juanjo-jaramillo-mZnx9429i94-unsplash.jpg"
+            alt="juanjo-jaramillo-mZnx9429i94-unsplash.jpg"
+            class="rounded-lg"
+          />
+        </picture>
+        <div class="flex-1 flex flex-col text-center space-y-4 lg:text-left">
+          <span class="text-text-light text-2xl font-semibold"
+            >An enthusiastic DevOps Engineer based in Singapore</span
+          >
+          <p>
+            I'm experienced in Frontend, Backend, and DevOps. I'm currently
+            studying under Singapore Polytechnic's Diploma in Information
+            Technology under the Project INC pathway.
+          </p>
+          <p>
+            Under the Project INC pathway, I've become a team-oriented person,
+            able to work with others to achieve a common goal. I've also become
+            a more responsible person, able to take ownership of my work and be
+            accountable for my actions.
+          </p>
+        </div>
+      </div>
     </div>
-  </section> -->
+  </section>
 </MainLayout>
