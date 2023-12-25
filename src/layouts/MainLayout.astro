@@ -1,4 +1,6 @@
 ---
+import { WEBSITE_URL, LINKEDIN_URL, GITHUB_URL } from '@/constants';
+
 interface Props {
   title: string;
   description: string;
@@ -6,11 +8,9 @@ interface Props {
 }
 
 const { title, description, path = '' } = Astro.props;
-
-const WEBSITE_URL = 'https://notlega.github.io';
 ---
 
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -58,7 +58,7 @@ const WEBSITE_URL = 'https://notlega.github.io';
         >
         <nav class="hidden py-5 text-base md:flex md:-ml-5 md:py-0">
           <a
-            href="/"
+            href="#home"
             class="relative mx-4 font-medium leading-6 text-text-light hover:text-opacity-80"
           >
             <span class="block">Home</span>
@@ -76,8 +76,14 @@ const WEBSITE_URL = 'https://notlega.github.io';
             <span class="block">Projects</span>
           </a>
           <a
+            href="#work"
+            class="relative mx-4 font-medium leading-6 text-text-light hover:text-opacity-80"
+          >
+            <span class="block">Work</span>
+          </a>
+          <a
             href="#contact"
-            class="relative mx-2 font-medium leading-6 text-text-light hover:text-opacity-80"
+            class="relative mx-4 font-medium leading-6 text-text-light hover:text-opacity-80"
           >
             <span class="block">Contact</span>
           </a>
@@ -149,7 +155,7 @@ const WEBSITE_URL = 'https://notlega.github.io';
                     <ul class="text-center text-3xl space-y-16">
                       <li>
                         <a
-                          href="/"
+                          href="#home"
                           class="font-medium leading-6 text-text-light hover:text-opacity-80"
                         >
                           <span class="block">Home</span>
@@ -171,6 +177,14 @@ const WEBSITE_URL = 'https://notlega.github.io';
                           @click="mobileSidebarOpen = false"
                         >
                           <span class="block">Projects</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#work"
+                          class="font-medium leading-6 text-text-light hover:text-opacity-80"
+                        >
+                          <span class="block">Work</span>
                         </a>
                       </li>
                       <li>
@@ -213,7 +227,7 @@ const WEBSITE_URL = 'https://notlega.github.io';
         class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
       >
         <a
-          href="#"
+          href={LINKEDIN_URL}
           class="text-text-light text-opacity-60 hover:text-opacity-100"
         >
           <span class="sr-only">LinkedIn</span>
@@ -231,7 +245,7 @@ const WEBSITE_URL = 'https://notlega.github.io';
           </svg>
         </a>
         <a
-          href="#"
+          href={GITHUB_URL}
           class="text-text-light text-opacity-60 hover:text-opacity-100"
         >
           <span class="sr-only">GitHub</span>

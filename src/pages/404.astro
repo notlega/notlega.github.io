@@ -1,12 +1,11 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
+
+import Hero from '@/components/Hero.astro';
 ---
 
 <MainLayout title="404" description="Page Not Found!">
-  <div class="flex flex-col justify-center items-center space-y-4 text-center min-h-[88vh]">
+  <Hero>
     <img src="/road-work-ahead-vine.gif" alt="road-work-ahead-vine.gif" />
-    <h2 class="text-xl">
-      Unfortunately, the road ahead did not work just like this path
-    </h2>
-  </div>
+  </Hero>
 </MainLayout>

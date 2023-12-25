@@ -1,35 +1,13 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 
-const SKILLS = [
-  ['PostgreSQL/MySQL', 'NoSQL'],
-  ['AWS', 'Docker'],
-  ['Bash/PowerShell', 'Git'],
-  ['GitHub', 'HTML/CSS'],
-  ['React/NextJS', 'Astro'],
-  ['TypeScript/JavaScript', 'NodeJS'],
-  ['Java', 'Maven/Gradle'],
-];
+import Hero from '@/components/Hero.astro';
+import Timeline from '@/components/Timeline.astro';
+import TimelineBar from '@/components/TimelineBar.astro';
 
-const EDUCATION = [
-  {
-    title: "Ang Mo Kio Secondary School - 'O' Levels",
-    date: 'January 2017 - December 2020',
-    description: [
-      'Member of the Symphonic Band and Section Leader of the Clarinet Section.',
-      'Participated in multiple programming events and competitions.',
-    ],
-    lists: ['Tank Tinkerer 2018', 'CodeFest 2019'],
-  },
-  {
-    title: 'Singapore Polytechnic - Diploma in Information Technology',
-    date: 'April 2021 - Present',
-    description: ['Currently in Project INC pathway.'],
-    lists: [],
-  },
-];
+import { LINKEDIN_URL, GITHUB_URL, GMAIL } from '@/constants';
 
-const EXPERIENCE = [
+const WORK = [
   {
     title: 'Food Innovation and Resource Centre (FIRC) - Software Engineer',
     date: 'April 2022 - August 2022',
@@ -61,108 +39,160 @@ const EXPERIENCE = [
 ---
 
 <MainLayout
-  title="Home"
-  description="Welcome to Hin Journ's portfolio home page!"
+  title={`Ong Hin Journ - DevOps Engineer`}
+  description="An enthusiastic DevOps Engineer based in Singapore."
 >
-  <article class="prose max-w-none mt-4">
-    <h2>Profile</h2>
-    <p>
-      Hello, I'm Ong Hin Journ, an aspiring DevOps / Software Engineer based in
-      Singapore. I'm experienced in Frontend, Backend, and DevOps. I'm currently
-      studying under Singapore Polytechnic's Diploma in Information Technology
-      under the Project INC pathway.
-    </p>
-    <p>
-      Under the Project INC pathway, I've become a team-oriented person, able to
-      work with others to achieve a common goal. I've also become a more
-      responsible person, able to take ownership of my work and be accountable
-      for my actions.
-    </p>
-    <p>
-      I'm currently looking for a DevOps / Software Engineer internship to
-      further my skills and knowledge in the industry.
-    </p>
-    <h2>Skills</h2>
-    <p>I'm experienced in the following technologies:</p>
-    <table>
-      <tbody class="w-full min-w-max table-auto text-left">
+  <section class="max-w-4xl mx-auto" id="home">
+    <Hero>
+      <img
+        src="https://source.unsplash.com/random/300x300"
+        alt="Profile Picture"
+        width="300"
+        height="300"
+        class="rounded-full border-2 border-text-light border-opacity-50 object-cover mx-auto"
+      />
+      <div class="flex flex-col space-y-8 justify-center">
+        <h1 class="text-5xl font-bold">DevOps Engineer</h1>
+        <span
+          >Hello, I'm Ong Hin Journ. An enthusiastic DevOps Engineer based in
+          Singapore.</span
+        >
+        <div class="flex flex-row justify-center space-x-5 lg:justify-normal">
+          <a
+            href={LINKEDIN_URL}
+            class="text-text-light text-opacity-60 hover:text-opacity-100"
+          >
+            <span class="sr-only">LinkedIn</span>
+            <svg
+              class="w-8 h-8"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M 2.757813 1 C 1.792969 1 1 1.792969 1 2.757813 L 1 12.246094 C 1 13.207031 1.792969 14 2.757813 14 L 12.246094 14 C 13.207031 14 14 13.207031 14 12.246094 L 14 2.757813 C 14 1.792969 13.207031 1 12.246094 1 Z M 2.757813 2 L 12.246094 2 C 12.667969 2 13 2.332031 13 2.757813 L 13 12.246094 C 13 12.667969 12.667969 13 12.246094 13 L 2.757813 13 C 2.332031 13 2 12.667969 2 12.246094 L 2 2.757813 C 2 2.332031 2.332031 2 2.757813 2 Z M 4 3 C 3.449219 3 3 3.449219 3 4 C 3 4.550781 3.449219 5 4 5 C 4.550781 5 5 4.550781 5 4 C 5 3.449219 4.550781 3 4 3 Z M 3 6 L 3 12 L 5 12 L 5 6 Z M 6 6 L 6 12 L 8 12 L 8 9.320313 C 8 8.488281 8.078125 7.742188 9.078125 7.742188 C 10.0625 7.742188 10 8.636719 10 9.375 L 10 12 L 12 12 L 12 9.039063 C 12 7.320313 11.640625 6 9.691406 6 C 8.753906 6 8.28125 6.375 8.023438 6.875 L 8 6.875 L 8 6 Z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href={GITHUB_URL}
+            class="text-text-light text-opacity-60 hover:text-opacity-100"
+          >
+            <span class="sr-only">GitHub</span>
+            <svg
+              class="w-8 h-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </Hero>
+  </section>
+  <section class="bg-white p-24" id="about">
+    <div class="max-w-4xl text-center mx-auto space-y-8">
+      <h2 class="text-primary-light text-4xl font-bold">About Me</h2>
+      <div
+        class="flex flex-col justify-center space-y-10 mx-auto lg:flex-row lg:space-x-16 lg:space-y-0 lg:items-center"
+      >
+        <picture class="flex-1">
+          <img
+            src="/juanjo-jaramillo-mZnx9429i94-unsplash.jpg"
+            alt="juanjo-jaramillo-mZnx9429i94-unsplash.jpg"
+            class="rounded-lg"
+          />
+        </picture>
+        <div class="flex-1 flex flex-col text-center space-y-4 lg:text-left">
+          <span class="text-text-light text-2xl font-semibold"
+            >An enthusiastic DevOps Engineer based in Singapore.</span
+          >
+          <p>
+            I'm experienced in Frontend, Backend, and DevOps. I'm currently
+            studying under Singapore Polytechnic's Diploma in Information
+            Technology under the Project INC pathway.
+          </p>
+          <p>
+            Under the Project INC pathway, I've become a team-oriented person,
+            able to work with others to achieve a common goal. I've also become
+            a more responsible person, able to take ownership of my work and be
+            accountable for my actions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-24" id="projects">
+    <div class="max-w-4xl text-center mx-auto space-y-8">
+      <h2 class="text-primary-light text-4xl font-bold">Projects</h2>
+    </div>
+  </section>
+  <section class="bg-white p-24" id="work">
+    <div class="max-w-4xl text-center mx-auto space-y-8">
+      <h2 class="text-primary-light text-4xl font-bold">Work</h2>
+      <TimelineBar>
         {
-          SKILLS.map((skill) => (
-            <tr>
-              <td>{skill[0]}</td>
-              <td>{skill[1]}</td>
-            </tr>
+          WORK.map((work) => (
+            <Timeline>
+              <h5 class="block text-xl font-bold leading-none tracking-tight text-text-light">
+                {work.title} &centerdot;{' '}
+                <span class="text-base text-text-light opacity-50">
+                  {work.date}
+                </span>
+              </h5>
+              {work.description.map((description) => (
+                <p class="text-text-light text-opacity-80">{description}</p>
+              ))}
+            </Timeline>
           ))
         }
-      </tbody>
-    </table>
-    <h2>Education</h2>
-    <ul>
-      {
-        EDUCATION.map((education) => (
-          <li>
-            <h4 class="mb-0">{education.title}</h4>
-            <p class="mt-0 text-gray-700">{education.date}</p>
-            {education.description.map((item) => {
-              return <p>{item}</p>;
-            })}
-            <ul>
-              {education.lists &&
-                education.lists.map((item) => {
-                  return (
-                    <li>
-                      <p>{item}</p>
-                    </li>
-                  );
-                })}
-            </ul>
-          </li>
-        ))
-      }
-    </ul>
-    <h2>Experience</h2>
-    <ul>
-      {
-        EXPERIENCE.map((experience) => (
-          <li>
-            <h4 class="mb-0">{experience.title}</h4>
-            <p class="mt-0 text-gray-700">{experience.date}</p>
-            <ul>
-              {experience.description.map((item) => {
-                return <li>{item}</li>;
-              })}
-            </ul>
-          </li>
-        ))
-      }
-    </ul>
-    <h2>Contact Me</h2>
-    <p class="mb-0">Phone Number: (+65) 9455 4371</p>
-    <p class="my-0">
-      Email:{' '}
-      <a href="mailto:onghinjourn@gmail.com">onghinjourn@gmail.com</a>
-    </p>
-    <p class="my-0">
-      GitHub:{' '}
-      <a href="https://github.com/notlega">https://github.com/notlega</a>
-    </p>
-    <p class="my-0">
-      LinkedIn:{' '}
-      <a href="https://www.linkedin.com/in/ong-hin-journ-281a80241/">
-        https://www.linkedin.com/in/ong-hin-journ-281a80241/
-      </a>
-    </p>
-    <p class="my-0">
-      PDF Resume:{' '}
-      <a href="https://notlega.github.io/DevOps%20Engineer%20Resume.pdf">
-        Click to Download
-      </a>
-    </p>
-    <p class="mt-0 mb-8">
-      Word Document Resume:{' '}
-      <a href="https://notlega.github.io/DevOps%20Engineer%20Resume.docx">
-        Click to Download
-      </a>
-    </p>
-  </article>
+      </TimelineBar>
+    </div>
+  </section>
+  <section class="p-24" id="contact">
+    <div class="max-w-4xl text-center mx-auto space-y-8">
+      <h2 class="text-primary-light text-4xl font-bold">Contact Me</h2>
+      <div
+        class="flex flex-row justify-center items-center text-left space-x-8"
+      >
+        <div class="border-2 rounded-full p-3 text-secondary-light">
+          <span class="sr-only">Email</span>
+          <svg
+            class="w-10 h-10"
+            fill="currentColor"
+            viewBox="0 0 75.294 75.294"
+          >
+            <g>
+              <path
+                d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9
+		c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089
+		H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065
+		c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016
+		c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102
+		c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069
+		c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="flex flex-col space-y-1">
+          <h3 class="text-xl font-semibold text-text-light">Email</h3>
+          <a
+            href={`mailto:${GMAIL}`}
+            class="text-xl text-text-light text-opacity-60 hover:text-opacity-100"
+          >
+            {GMAIL}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
