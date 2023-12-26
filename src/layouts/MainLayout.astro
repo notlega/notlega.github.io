@@ -157,6 +157,7 @@ const { title, description, path = '' } = Astro.props;
                         <a
                           href="#home"
                           class="font-medium leading-6 text-text-light hover:text-opacity-80"
+                          @click="mobileSidebarOpen = false"
                         >
                           <span class="block">Home</span>
                         </a>
