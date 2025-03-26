@@ -5,37 +5,13 @@ import Hero from '@/components/Hero.astro';
 import Timeline from '@/components/Timeline.astro';
 import TimelineBar from '@/components/TimelineBar.astro';
 
-import { LINKEDIN_URL, GITHUB_URL, GMAIL } from '@/constants';
-
-const WORK = [
-  {
-    title: 'Food Innovation and Resource Centre (FIRC) - Software Engineer',
-    date: 'April 2022 - August 2022',
-    description: [
-      'Used the MVC design pattern to design and code, which improves re-usability and maintainability.',
-      'Wrote logging for debugging and testing purposes for the entire project to improve productivity.',
-      'Wrote unit test cases to maintain the application and prevent bugs, reducing costs.',
-      'Used React, a popular Front-End framework, together with charting and styling libraries using best practices to improve reusability and maintainability.',
-      'Wrote end-to-end test cases to maintain application and eliminate bugs.',
-      'Participated in the setting up, maintaining and deployment of the PostgreSQL relational database for development and production.',
-    ],
-  },
-  {
-    title: 'Singapore Iron Works Merchant Association - DevOps Engineer',
-    date: 'September 2022 - Current',
-    description: [
-      'Used NextJS, a popular Front-End framework, together with popular styling libraries using best practices to improve responsiveness and maintainability.',
-      'Wrote end-to-end test cases to maintain the application and reduce bugs.',
-      'In V1 of the WebApp, I contributed to the design of the database.',
-      'In V2 of the WebApp, I participated in the migration and setup of the database from Supabase to CockroachDB and Prisma as our ORM.',
-      'Wrote testing and deployment pipelines using GitHub Actions.',
-      'This improved productivity by 100% as manual testing and deployment was not needed anymore.',
-      'Set-up AWS ECR, ECS, and S3 for preview, staging and production.',
-      'Wrote documentation for teams to help them set up a local testing environment using Docker and Bash/Powershell.',
-      "This reduced the team's time wasted searching for methods to set up their local testing environment.",
-    ],
-  },
-];
+import {
+  LINKEDIN_URL,
+  GITHUB_URL,
+  GMAIL,
+  PROJECTS,
+  WORK_EXPERIENCE,
+} from '@/constants';
 ---
 
 <MainLayout
@@ -44,12 +20,14 @@ const WORK = [
 >
   <section class="max-w-4xl mx-auto" id="home">
     <Hero>
-      <div class="flex flex-col justify-between text-center space-y-10 lg:w-auto lg:flex-row lg:text-left lg:space-x-16 lg:space-y-0">
-        <img
+      <div
+        class="flex flex-col justify-between text-center space-y-10 lg:w-auto lg:flex-row lg:text-left lg:space-x-16 lg:space-y-0"
+      >
+        <!-- <img
           src="https://source.unsplash.com/random/300x300"
           alt="Profile Picture"
           class="w-72 h-auto rounded-full border-2 border-text-light border-opacity-50 object-cover mx-auto"
-        />
+        /> -->
         <div class="flex flex-col space-y-8 justify-center">
           <h1 class="text-5xl font-bold">DevOps Engineer</h1>
           <span
@@ -116,9 +94,9 @@ const WORK = [
             >An enthusiastic DevOps Engineer based in Singapore.</span
           >
           <p>
-            I'm experienced in Frontend, Backend, and DevOps. I'm currently
-            studying under Singapore Polytechnic's Diploma in Information
-            Technology under the Project INC pathway.
+            I'm experienced in Frontend, Backend, and DevOps. I studied at
+            Singapore Polytechnic's Diploma in Information Technology under the
+            Project INC pathway.
           </p>
           <p>
             Under the Project INC pathway, I've become a team-oriented person,
@@ -133,6 +111,23 @@ const WORK = [
   <section class="px-8 py-16 md:p-24" id="projects">
     <div class="max-w-4xl text-center mx-auto space-y-8">
       <h2 class="text-primary-light text-4xl font-bold">Projects</h2>
+      <TimelineBar>
+        {
+          PROJECTS.map((project) => (
+            <Timeline>
+              <h5 class="block text-xl font-bold leading-none tracking-tight text-text-light">
+                {project.title} &centerdot;{' '}
+                <span class="text-base text-text-light opacity-50">
+                  {project.date}
+                </span>
+              </h5>
+              {project.description.map((description) => (
+                <p class="text-text-light text-opacity-80">{description}</p>
+              ))}
+            </Timeline>
+          ))
+        }
+      </TimelineBar>
     </div>
   </section>
   <section class="bg-white px-8 py-16 md:p-24" id="work">
@@ -140,7 +135,7 @@ const WORK = [
       <h2 class="text-primary-light text-4xl font-bold">Work</h2>
       <TimelineBar>
         {
-          WORK.map((work) => (
+          WORK_EXPERIENCE.map((work) => (
             <Timeline>
               <h5 class="block text-xl font-bold leading-none tracking-tight text-text-light">
                 {work.title} &centerdot;{' '}
